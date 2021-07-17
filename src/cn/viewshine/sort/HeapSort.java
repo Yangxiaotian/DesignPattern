@@ -21,10 +21,22 @@ public class HeapSort implements SortAlgorithm{
         }
     }
     private void BUILD_MAX_HEAP(int A[], int n) {
+        for(int i = n/2-1; i >= 0; i--) {
+            MAX_HEAPIFY(A, i, n);
+        }
+    }
+    private void HEAP_SORT(int[] A, int n) {
+        BUILD_MAX_HEAP(A, n);
+        for (int i = n-1; i > 0; i--) {
+            int temp = A[0];
+            A[0] = A[i];
+            A[i] = temp;
+            MAX_HEAPIFY(A, 0, i);
+        }
 
     }
     @Override
     public void sort(int[] A) {
-
+        HEAP_SORT(A, A.length);
     }
 }

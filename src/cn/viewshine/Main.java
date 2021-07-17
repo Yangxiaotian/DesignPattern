@@ -1,10 +1,7 @@
 package cn.viewshine;
 
 import cn.viewshine.duck.correct.*;
-import cn.viewshine.sort.InsertSort;
-import cn.viewshine.sort.MergeSort;
-import cn.viewshine.sort.QuickSort;
-import cn.viewshine.sort.SortAlgorithm;
+import cn.viewshine.sort.*;
 
 public class Main {
 
@@ -46,7 +43,7 @@ public class Main {
 		insertSort.sort(A);
 		System.out.println("插入排序");
 		for (int i = 0; i < A.length; i++)
-		System.out.print(A[i]+" ");
+			System.out.print(A[i]+" ");
 		System.out.println();
 
 		A[0] = 3; A[1] = 2; A[2] = 1; A[3] = 4;
@@ -54,7 +51,7 @@ public class Main {
 		quickSort.sort(A);
 		System.out.println("快速排序");
 		for (int i = 0; i < A.length; i++)
-		System.out.print(A[i]+" ");
+			System.out.print(A[i]+" ");
 		System.out.println();
 
 		A[0] = 3; A[1] = 2; A[2] = 1; A[3] = 4;
@@ -63,7 +60,14 @@ public class Main {
 		System.out.println("归并排序");
 		for (int i = 0; i < A.length; i++)
 			System.out.print(A[i]+" ");
+		System.out.println();
 
+		A[0] = 3; A[1] = 2; A[2] = 1; A[3] = 4;
+		SortAlgorithm heapSort = new HeapSort();
+		heapSort.sort(A);
+		System.out.println("堆排序");
+		for (int i = 0; i < A.length; i++)
+			System.out.print(A[i]+" ");
 
     }
 }
