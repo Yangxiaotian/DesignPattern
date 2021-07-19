@@ -21,5 +21,6 @@ public class ForecastDisplay implements Observer, DisplayElement{
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
+        display();
     }
 }
