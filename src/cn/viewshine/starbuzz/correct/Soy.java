@@ -5,9 +5,21 @@ public class Soy extends CondimentDecorator{
     public Soy(Beverage beverage) {
         this.beverage = beverage;
     }
+    public int getSize() {
+        return beverage.getSize();
+    }
     @Override
     public float cost() {
-        return beverage.cost()+.15f;
+        float cost = beverage.cost()+.15f;
+        int size = getSize();
+        if (size == Beverage.TALL) {
+            cost += .1f;
+        } else if (size == Beverage.GRANDE) {
+            cost += .15f;
+        } else if (size == Beverage.VENTI) {
+            cost += .20f;
+        }
+        return cost;
     }
 
     @Override
